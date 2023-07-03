@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Speech-to-Text Converter</title>
+  <style>
+    #output {
+      margin-top: 20px;
+      width: 400px;
+      height: 200px;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Speech-to-Text Converter</h1>
+  <button onclick="startListening()">Start Listening</button>
+  <button onclick="stopListening()">Stop Listening</button>
+  <div id="output"></div>
+  <button onclick="downloadText()">Download as PDF</button>
+
+  <script>
+    var recognition; // Declare the recognition variable
+
+    // Check if the browser supports the Web Speech API
+    if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
+      // Create a new instance of SpeechRecognition
+      recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+
+      // Set the properties for recognition
+      recognition.lang = 'en-US'; // Set the language
+      recognition.continuous = true; // Keep listening for speech
+      recognition.interimResults = true; // Get interim results
+
+      // Event fired when speech recognition starts
+      recognition.onstart = function() {
+        console.log('Speech recognition started');
+      };
+
+      // Event fired when speech recognition ends
+      recognition.onend = function() {
+        console.log('Speech recognition ended');
+      };
+
+      // Event fired when a result is received
+      recognition.onresult = function(event) {
+        var output = document.getElementById('output');
+        var transcript = '';
+
+        // Iterate through the results
+        for (var i = event.resultIndex; i < event.results.length; i++) {
+          var result = event.results[i];
+
+          // Get the recognized text
+          transcript += result[0].transcript;
+        }
+
+        // Update the output with the recognized text
+        output.innerHTML = transcript;
+      };
+
+      // Function to start the speech recognition
+      function startListening() {
+        recognition.start();
+      }
+
+      // Function to stop the speech recognition
+      function stopListening() {
+        recognition.stop();
+      }
+    } else {
+      alert('Speech recognition is not supported in this browser.');
+    }
+
+    // Function to download the recognized text as a PDF file
+    function downloadText() {
+      var output = document.getElementById('output').innerText;
+      var filename = 'speech_to_text.pdf';
+
+      // Create a temporary link element
+      var link = document.createElement('a');
+      link.href = 'data:application/pdf,' + encodeURIComponent(output);
+      link.download = filename;
+
+      // Trigger the download
+      link.click();
+    }
+  </script>
+</body>
+</html>

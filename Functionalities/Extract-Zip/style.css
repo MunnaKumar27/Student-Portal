@@ -1,0 +1,115 @@
+
+#container{
+    text-align: center;
+    width: 50%;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-bottom: 200px;
+    border-radius: 10px;
+    padding: 40px 100px;
+    background-color: #222;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    font-weight: 600;
+}
+img {
+    width: 90%;
+}
+#addfile{
+    padding-bottom: 100px;
+    display: none;
+}
+
+.custom-file-upload {
+  color: white;
+    border: 2px solid #8a39e1;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 12px 25px;
+    cursor: pointer;
+}
+.reset{
+  margin:50px auto 50px 30px;
+  border-radius: 10px;
+  padding: 15px 20px;
+  font-size: 1.2em;
+  background-color: #FF1700;
+  color: #fff;
+  border: 2px solid #FF1700;
+  border-radius: 10px;  
+  border: none;
+  transition: all 0.3s ease;
+}
+.reset:hover {
+  cursor: pointer;
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+ul{
+  list-style: none;
+}
+
+#file-list{
+  background-color: white;
+  color: #8a39e1;
+  border-radius: 10px;
+  overflow-x: hidden;
+  padding: 20px;
+  height: 5vh;
+  margin-bottom: 40px;
+}
+
+.filename{
+  color: #8a39e1;
+  text-decoration: none;
+  display: block;
+  font-weight: 500;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+.filename:hover{
+  padding: 18px;
+  background-color: #8a39e1;
+  color: white;
+}
+.form-label{
+  color: #8a39e1;
+  font-size:1.2rem;
+  margin-bottom: 15px;
+  pointer-events: none;
+}
+.light-mode{
+  background-color: #F5F8FF;
+  color: black;
+}
+.light-mode #container{
+  background-color: #FFF;
+}
+.light-mode .custom-file-upload{
+  color: #222;
+}
+.light-mode #file-list{
+  border: 2px solid #8a39e1;
+}
+.light-mode .reset{
+  color: #222;
+}

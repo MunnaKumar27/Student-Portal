@@ -1,0 +1,97 @@
+body {
+    padding-top: 10px;
+}
+
+#searchInputBox {
+    height: 50px; 
+    font-size: 20pt; 
+    border-radius: 10px; 
+    width: 650px; 
+    font-family: 'Kristen ITC';  
+    padding-top: 0px;
+    color: whitesmoke;
+
+}
+
+#noteEditor {
+    height: 800px; 
+    width: 900px;
+    left: -100px;
+}
+
+#topBg {
+    position: absolute;
+    top: -20px;
+    left: 0;
+    z-index: -1;
+  }
+
+#researchButton {
+    position: absolute;
+    left: 60px;
+    top: 150px;
+    background-color: #918BC6;
+    width: 190px;
+    height: 50px;
+    border-radius: 50px;
+    font-size: 20px;
+    font-family: 'Maiandra GD';
+}
+
+#notesFinderButton {
+    position: absolute;
+    left: 60px;
+    top: 220px;
+    background-color: #918BC6;
+    width: 190px;
+    height: 50px;
+    border-radius: 50px;
+    font-size: 20px;
+    font-family: 'Maiandra GD';
+}
+
+#notesMakerButton {
+    position: absolute;
+    left: 60px;
+    top: 290px;
+    background-color: #918BC6;
+    width: 190px;
+    height: 50px;
+    border-radius: 50px;
+    font-size: 20px;
+    font-family: 'Maiandra GD';
+}
+
+#appInfoButton {
+    position: absolute;
+    left: 60px;
+    top: 360px;
+    background-color: #918BC6;
+    width: 190px;
+    height: 50px;
+    border-radius: 50px;
+    font-size: 20px;
+    font-family: 'Maiandra GD';
+}
+
+
+
+
+ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .completed {
+    text-decoration: line-through;
+  }
+
+
+
+
+
+
+
+
+
+

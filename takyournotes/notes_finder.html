@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>File Upload Example</title>
+  <script>
+    function handleFileSelect(event) {
+      const fileList = event.target.files; // Get the selected files
+      const fileOutput = document.getElementById('fileOutput'); // Output container
+
+      // Clear the output container
+      fileOutput.innerHTML = '';
+
+      // Loop through the selected files
+      for (let i = 0; i < fileList.length; i++) {
+        const file = fileList[i];
+        const fileName = file.name;
+        const fileSize = file.size;
+
+        // Create a new list item for each file and display file name and size
+        const listItem = document.createElement('li');
+        listItem.textContent = `${fileName} (${fileSize} bytes)`;
+
+        // Create a link to open the file
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(file);
+        link.textContent = 'Open';
+        link.target = '_blank';
+
+        // Append the link to the list item
+        listItem.appendChild(link);
+
+        // Append the list item to the output container
+        fileOutput.appendChild(listItem);
+      }
+    }
+  </script>
+</head>
+<body style="background-color: #5D5990; color: whitesmoke;">
+  <center><h1 style="font-family: Kristen ITC;">File Upload Example</h1></center>
+  <input type="file" multiple onchange="handleFileSelect(event)" >
+  <ul id="fileOutput"></ul>
+
+
+</body>
+</html>
